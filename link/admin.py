@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Link, Stats
+from .models import Link
 # Register your models here.
 @admin.register(Link)
 class LinkAdmin(admin.ModelAdmin):
@@ -7,7 +7,3 @@ class LinkAdmin(admin.ModelAdmin):
     search_fields = ('original_url', 'short_url')
 
 
-@admin.register(Stats)
-class StatsAdmin(admin.ModelAdmin):
-    list_display = ('link', 'ip_address', 'created_at')
-    search_fields = ('link__original_url', 'ip_address')
